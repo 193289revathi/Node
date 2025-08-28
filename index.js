@@ -28,7 +28,7 @@ app.get('/employees', (req, res) => {
       res.status(500).send("DB query failed");
       return;
     }
-    res.send("Hello employees\n" + JSON.stringify(results, null, 2));
+    res.send("Hello \n" + JSON.stringify(results, null, 2));
   });
 });
 
