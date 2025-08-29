@@ -1,6 +1,8 @@
 #!/bin/bash
-# Go to app folder on EC2
+echo "Starting Node.js app..."
 cd /home/ec2-user/employee-app
-# Start or restart app with PM2
-pm2 start index.js --name employee-app || pm2 restart employee-app
+# Kill old process if running
+pkill -f "node index.js"
+# Start app in background
+nohup npm start > app.log 2>&1 &
 

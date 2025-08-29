@@ -1,6 +1,5 @@
 #!/bin/bash
-# Go to app folder on EC2
+echo "Installing dependencies..."
 cd /home/ec2-user/employee-app
-# Install dependencies
 npm install
 

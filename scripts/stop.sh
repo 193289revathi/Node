@@ -1,4 +1,5 @@
 #!/bin/bash
-# Stop the app if it's already running
-pm2 stop employee-app || true
+echo "Stopping Node.js app..."
+cd /home/ec2-user/employee-app
+pkill -f "node index.js"
 
