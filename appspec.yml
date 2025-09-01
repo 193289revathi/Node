@@ -6,13 +6,13 @@ files:
     destination: /home/ec2-user/employee-app
 
 hooks:
-  BeforeInstall:
-    - location: scripts/install.sh
+  ApplicationStop:
+    - location: scripts/stop.sh
       timeout: 300
       runas: ec2-user
 
-  ApplicationStop:
-    - location: scripts/stop.sh
+  BeforeInstall:
+    - location: scripts/install.sh
       timeout: 300
       runas: ec2-user
 
