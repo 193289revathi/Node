@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Validating deployment..."
-curl -s http://localhost:3000 || exit 1
+echo "Validating Node app..."
+curl -f http://localhost:3000 || exit 1
 
