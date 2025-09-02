@@ -7,15 +7,15 @@ files:
     overwrite: true
 
 hooks:
+  BeforeInstall:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: root
+
   ApplicationStop:
     - location: scripts/stop.sh
       timeout: 300
       runas: ec2-user
-
-  BeforeInstall:
-    - location: scripts/install.sh
-      timeout: 300
-      runas: root #run as root for npm installs
 
   ApplicationStart:
     - location: scripts/start.sh
