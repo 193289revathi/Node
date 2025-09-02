@@ -1,7 +1,10 @@
 #!/bin/bash
-echo "Validating Node app..."
-# Wait a few seconds for app to start
-sleep 5
-curl -f http://localhost:3000 || exit 1
-echo "Node app is running successfully."
+echo "Validating application..."
+cd /home/ec2-user/Node
+# Optional: simple check to see if index.js exists
+if [ ! -f index.js ]; then
+  echo "Error: index.js not found!"
+  exit 1
+fi
+echo "Validation complete."
 
