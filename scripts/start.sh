@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "Starting Node app..."
+echo "Starting application..."
 cd /home/ec2-user/employee-app
-nohup node index.js > app.log 2>&1 &
-echo "Node app started."
+pm2 start index.js --name employee-app
+pm2 save
 
