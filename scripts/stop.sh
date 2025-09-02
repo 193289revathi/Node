@@ -1,11 +1,14 @@
 #!/bin/bash
-echo "Stopping existing Node app..."
-# Stop node app if running, ignore error if not running
-if pgrep -f "node index.js" > /dev/null
-then
-  pkill -f "node index.js"
-  echo "Node app stopped."
+echo "Stopping application..."
+
+# Check if pm2 is installed, if not, skip
+if command -v pm2 > /dev/null; then
+    # Stop the app if it's running
+    pm2 stop all || true
+
+    # Delete the app from pm2 list to avoid duplicates
+    pm2 delete all || true
 else
-  echo "No Node app running."
+    echo "PM2 not installed, skipping stop step."
 fi
 
