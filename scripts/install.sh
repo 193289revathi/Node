@@ -2,7 +2,8 @@
 set -e
 echo "Installing dependencies..."
 
-# Navigate to the deployment folder
+# Pre-create the deployment folder if it doesn't exist
+mkdir -p /home/ec2-user/Node
 cd /home/ec2-user/Node
 
 # Install Node.js dependencies
